@@ -5,14 +5,13 @@ function guess_filenum {
 	read guess
 	if [[ $guess -eq $filenum ]]
 	then
-		echo "Amazing!!! You finally guessed it!"
-		echo "Hooooooray"
-		echo "  So we have ..."
+		echo "CONGRATULATIONS :) You guessed it!"
+		echo "  Following files are there >>>> \n"
 		for f in $(ls)
 		do
 			echo "  - $f and "
 		done
-		echo "    ... and that was it."
+		echo "    ..End"
 	else
 		if [[ $guess -gt $filenum ]]
 		then
