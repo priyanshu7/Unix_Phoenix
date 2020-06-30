@@ -1,7 +1,11 @@
 readme : guessinggame.sh
 	touch README.md
-	echo "Title of the project: __UNIX PHOENIX__" > README.md
-	echo "\nDate make ran at:" >> README.md
+	echo "Hello and Welcome to an amazing guessing game"
+	echo "# WELCOME TO UNIX PHOENIX" > README.md
+	echo "\n ## This is an auto-generated README.MD file" >> README.md
+	echo "*Title of the project :* **UNIX PHOENIX**" >> README.md
+	echo "\n *Date:*" >> README.md
 	date >> README.md
-	echo "\nNumber of lines file guessinggame.sh contains:" >> README.md
+	echo "\n *Number of lines in file guessinggame.sh:*" >> README.md
 	cat guessinggame.sh | wc -l >> README.md
+	echo "\n\n **Done by: _Priyanshu Mehta_**" >> README.md
