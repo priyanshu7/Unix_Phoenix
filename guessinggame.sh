@@ -1,28 +1,46 @@
-#!/usr/bin/env bash
-filenum=$(ls | wc -l)
+num_file=$(ls | wc -l)
 
-function guess_filenum {
-	read guess
-	if [[ $guess -eq $filenum ]]
-	then
-		echo "CONGRATULATIONS :) You guessed it!"
-		echo "  Following files are there >>>> \n"
-		for f in $(ls)
-		do
-			echo "  - $f and "
-		done
-		echo "    ..End"
-	else
-		if [[ $guess -gt $filenum ]]
+function guess_game {
+	count=3
+	while [[ $count -gt 0 ]]
+	do		
+		read input
+		let count=$count-1
+		if [[ $input -eq $num_file ]]
 		then
-			echo "There is less... try again and press Enter :"
-			guess_filenum
+			echo "CONGRATULATIONS :) You guessed it! Wohhooooooo"
+			let count=0
+			echo "  Following files are present in directory >>>>-->>>>"
+			for file in $(ls)
+			do
+				echo "  - $file , "
+			done
+			echo "You have successfully finished off the game! WINNER !!!"
+			echo "Do play again in some time!"
+		elif [[ $input -gt $num_file ]]
+		then
+			echo "SORRY! That's a wrong answer"
+			if [[ $count -eq 0 ]]
+			then
+				echo "You lost the game! Better luck next time!"
+				echo "Correct answer was $num_file"
+			else
+				echo "You still have $count chances left, try harder"
+				echo "Hint: Try a smaller number"
+			fi		
 		else
-			echo "There is more... try again and press Enter :"
-			guess_filenum
+			echo "SORRY! That's a wrong answer"
+			if [[ $count -eq 0 ]]
+			then
+				echo "You lost the game! Better luck next time!"num
+				echo "Correct answer was $num_file"
+			else
+				echo "You still have $count chances left, try harder"
+				echo "Hint: Try a bigger number"
+			fi
 		fi
-	fi
+	done
 }
-echo "Welcome to the guessing game!"
-echo "Guess how many files are in the current directory (pretend you don't know) and press Enter :"
-guess_filenum
+echo "Cat has 9 lives! But you only get 3"
+echo "Can you guess how many files are there in the current directory? You get 3 lives, bring your A game"
+guess_game
