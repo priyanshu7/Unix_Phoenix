@@ -2,7 +2,7 @@ readme : guessinggame.sh
 	touch README.md
 	echo "Hello and Welcome to an amazing guessing game"
 	echo "# WELCOME TO UNIX PHOENIX" > README.md
-	echo "\n ## This is an auto-generated README.MD file" >> README.md
+	echo "\n## This is an auto-generated README.MD file" >> README.md
 	echo "*Title of the project :* **UNIX PHOENIX**" >> README.md
 	echo "\n *Date:*" >> README.md
 	date >> README.md
