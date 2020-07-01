@@ -7,7 +7,7 @@
 Tue Jun 30 22:34:56 IST 2020
 
  *Number of lines in file guessinggame.sh:*
-46
+37
 
 
  **Done by: _Priyanshu Mehta_**
